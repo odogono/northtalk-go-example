@@ -1,0 +1,13 @@
+-- guestbook.talk: the Script behind the example server.
+-- Grants: db (sqlite, the guestbook database) and words (check, a Go function).
+
+on sign author, message
+  ask words to check message
+  ask db to change "INSERT INTO entries (author, message) VALUES (?, ?) RETURNING id", [author, it], 1
+  return the id of item 1 of the rows of it
+end sign
+
+on entries
+  ask db to query "SELECT id, author, message FROM entries ORDER BY id", [], 100
+  return it
+end entries
