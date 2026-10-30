@@ -3,8 +3,8 @@ module github.com/odogono/northtalk-go-example
 go 1.26.0
 
 require (
-	northtalk.org/go v0.0.0-20261030093719-e0bc0711d45c
-	northtalk.org/go/sqlite v0.0.0-20261030093719-e0bc0711d45c
+	northtalk.org/go v0.1.0
+	northtalk.org/go/sqlite v0.1.0
 )
 
 require (
